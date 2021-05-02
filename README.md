@@ -8,7 +8,14 @@ Table of Content
 -   [Change and Customization](#)
 -   [How this app's code helps you](#)
 -   [Deployment](#)
+<hr>
 
+
+![QuizApp_Developer](https://github.com/fariharajput/QuizApp_Developer/blob/main/screencapture-developer-quizapp-netlify-app-2021-04-27-23_52_32.png)
+
+
+<a href="https://developer-quizapp.netlify.app/">Live demo</a>
+<hr>
 
 Getting Started
 ===============
@@ -33,7 +40,7 @@ then you get a command line interface
 
 put command to clone the files on your local computer
 ```git
-\$ git clone https://github.com/fahadhassan1213/ToDo-Tasks-app.git
+\$ git clone https://github.com/fariharajput/QuizApp_Developer.git
 ```
 **** 
 
@@ -42,7 +49,7 @@ Change and Customization
 
 * * * * *
 
-You can change the `timer.js` file to addd more functionalities to the app
+You can change the `quiz.js` file to addd more functionalities to the app
 
 
 following is the code of operations performing on each button 
@@ -88,54 +95,12 @@ On each call of this function we are decreasing seconds and minutes respectively
 
 Every time the work duration become over 'workMinutes === -1' we start the break session and 
 respectively and when the break session will over we again started the work session
-```js
 
-//fucntion, which is for showing the remaining time to user
-let timeReamaining = () =>{
-    seconds = seconds - 1;
-    if(seconds === 0){
-        workMinutes = workMinutes - 1;
-        if(workMinutes === -1){
-            if(breakcount % 2 === 0){
-                workMinutes = breakMinutes;
-                breakcount = breakcount + 1;
-                notice.innerText = `(Break Time)` 
-    
-            }else{
-                width = 1;
-                workMinutes = workDuration - 1;
-                breakcount = breakcount + 1;
-                notice.innerText = ' ';
-
-        } 
-    }
-        seconds = 59;
-    }
-```
-
-Code given below is for progress bar, to increase on every call to the fuction 
-```js
-const progressBar1 = document.querySelector('.p1')
-const progressBar2 = document.querySelector('.p2')
-let increaseProgress = () =>{
-    if(width === 100){
-        progressBar1.style.width = 1 + '%'
-        progressBar2.style.width = 1 + '%'
-    }else{
-        width ++;
-        progressBar1.style.width = width + '%';
-        progressBar2.style.width = width + '%';
-    
-    }
-    
-}
-
-```
 At the End when the session will be stoped we have to clear all the inputs and the session itself
 So for this purpose we do clear and reset all the variables we want to be cleared 
 How this app's code helps you
 ========================
-In the `time.js` file you can get the javascript code 
+In the `quiz.js` file you can get the javascript code 
 
 Using the code you can be able to creat a pomodoro timer in which you can allow the
 user to set a session time in which user is needed to provide work duration and break duration 
